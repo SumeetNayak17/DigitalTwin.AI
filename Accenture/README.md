@@ -1,7 +1,7 @@
 # DigitalTwin.ai: Autonomous Virtual Sensor for Mixed-Model Assembly
 **Accenture Innovation Challenge 2026 - Problem Track 4 Prototype**
 
-🌐 **Live Prototype Deployment:** [Access the Live Streamlit App](YOUR_STREAMLIT_URL_HERE)
+🌐 **Live Prototype Deployment:** [Access the Live Streamlit App](https://digitaltwin-ai.streamlit.app/)
 
 ## Overview
 This repository contains a functional Digital Twin prototype for a mixed-model vehicle assembly line, integrating principles of solid mechanics with machine learning. The solution addresses the challenge of uneven sensor coverage by deploying an XGBoost-driven "Virtual Sensor" and a Deep Q-Learning (DQL) prescriptive agent. This architecture bridges data gaps at legacy stations without requiring costly hardware retrofits or production downtime.
