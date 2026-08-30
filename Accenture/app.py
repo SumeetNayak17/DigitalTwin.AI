@@ -4,6 +4,7 @@ import xgboost as xgb
 import numpy as np
 import json
 import time
+import os
 
 # ==========================================
 # ⏱️ MASTER TIMING CONTROLS FOR LIVE FEED
@@ -19,12 +20,16 @@ if 'confirmed_defects' not in st.session_state: st.session_state.confirmed_defec
 @st.cache_resource
 def load_model():
     model = xgb.XGBClassifier()
-    model.load_model('digital_twin_model.json')
+    # Dynamically locate the JSON file in the same folder as app.py
+    model_path = os.path.join(os.path.dirname(__file__), 'digital_twin_model.json')
+    model.load_model(model_path)
     return model
 
 @st.cache_data
 def load_dataset():
-    return pd.read_csv('assembly_line_40_stations.csv')
+    # Dynamically locate the CSV file in the same folder as app.py
+    csv_path = os.path.join(os.path.dirname(__file__), 'assembly_line_40_stations.csv')
+    return pd.read_csv(csv_path)
 
 model = load_model()
 df_dataset = load_dataset()
